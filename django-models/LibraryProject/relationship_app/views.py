@@ -16,6 +16,6 @@ from .models import Library
 # Class-based view to show library details
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = 'library_detail.html'
+    template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
 
