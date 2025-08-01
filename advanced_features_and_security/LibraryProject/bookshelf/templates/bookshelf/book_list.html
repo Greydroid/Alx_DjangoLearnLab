@@ -1,0 +1,22 @@
+<!-- bookshelf/templates/bookshelf/book_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Bookshelf 📚</h1>
+
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }} by {{ book.author }} ({{ book.published_date }})</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+</body>
+</html>
+
