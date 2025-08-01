@@ -1,10 +1,11 @@
 # bookshelf/forms.py
 
 from django import forms
-from .models import Book  # Adjust based on your model name
 
-class BookForm(forms.ModelForm):
-    class Meta:
-        model = Book
-        fields = ['title', 'author', 'published_date']  # match your model fields
+# bookshelf/forms.py
+
+class ExampleForm(forms.Form):
+    name = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
 
