@@ -15,7 +15,7 @@ def book_list(request):
 
 from django.shortcuts import render
 from .models import Book
-from .forms import BookForm
+from .forms import ExampleForm
 from django.db.models import Q
 
 # ✅ Example: Safe search view
@@ -29,10 +29,10 @@ def search_books(request):
 # ✅ Example: Safe form handling
 def add_book(request):
     if request.method == 'POST':
-        form = BookForm(request.POST)
+        form = ExampleForm(request.POST)
         if form.is_valid():  # ✅ Validates user input
             form.save()
     else:
-        form = BookForm()
+        form = ExampleForm()
     return render(request, 'bookshelf/form_example.html', {'form': form})
 
